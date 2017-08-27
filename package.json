@@ -1,0 +1,26 @@
+{
+  "name": "puppeteer-issue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test",
+    "start": "kill-port 3000 && webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessehattabaugh/puppeteer-issue.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessehattabaugh/puppeteer-issue/issues"
+  },
+  "homepage": "https://github.com/jessehattabaugh/puppeteer-issue#readme",
+  "devDependencies": {
+    "cross-port-killer": "^1.0.1",
+    "puppeteer": "^0.10.1",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
