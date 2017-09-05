@@ -21,18 +21,25 @@ async function newUserViewsHomepage() {
     try {
         const browser = await puppeteer.launch({
             ignoreHTTPSErrors: true,
-            headless: false,
-            slowMo: 1000,
+            
+            //slowMo: 0, // this one works
+            slowMo: 1000, // this one breaks
+            
+            //headless: false, // this causes a different error
             dumpio: true,
         });
         const page = await browser.newPage();
+        
+        console.log('going to: ' + serverUrl);
         await page.goto(serverUrl);
-        await page.screenshot('screenshots/homepage.png');
-        /*await page.screenshot({
+        
+        //await page.screenshot('screenshots/homepage.png'); // this doesn't work either
+        await page.screenshot({
             path: 'screenshots/homepage.png',
             omitBackground: false,
-        });*/
-        console.log('done puppeting');
+        });
+        console.log('done screenshotting');
+        
         browser.close();
 
     } catch (err) {
